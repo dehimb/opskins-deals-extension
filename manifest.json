@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+
+  "name": "Opskins monitor",
+  "description": "Get best price",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "res/img/power-stop.png"
+  },
+  
+  "background": {
+    "persistent": false,
+    "scripts": ["res/js/background.js"]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://opskins.com/*"],
+      "css": ["res/css/style.css"],
+      "js": ["res/js/content.js"],
+      "run_at": "document_start"
+    }
+  ],
+
+  "permissions": [
+    "activeTab",
+    "debugger",
+    "tabs",
+    "storage",
+    "*://*/"
+  ]
+}
